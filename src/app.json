@@ -1,0 +1,30 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#bc83f3",
+    "backgroundColor": "#fff",
+    "navigationBarTitleText": "胎儿体重小助手",
+    "navigationBarTextStyle":"white",
+    "enablePullDownRefresh": false
+  },
+  "tabBar": {
+    "color": "#aaaaaa",
+    "selectedColor": "#bc83f3",
+    "backgroundColor": "#fff",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "体重计算",
+      "iconPath": "images/scales.png",
+      "selectedIconPath": "images/scales-active.png"
+    }, {
+      "pagePath": "pages/logs/logs",
+      "text": "胎动记录",
+      "iconPath": "images/polyline.png",
+      "selectedIconPath": "images/polyline-active.png"
+    }]
+  }
+}

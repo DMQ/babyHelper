@@ -1,0 +1,5 @@
+<template name="sayHi">
+    <view style="text-align:center;margin-top:20rpx;">
+        <text bindtap="{{clickHiText}}">{{hiText}}</text>
+    </view>
+</template>
