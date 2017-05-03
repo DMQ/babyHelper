@@ -1,21 +1,5 @@
-<!--index.wxml-->
-<import src="../../components/hi.wxml"/>
-
-<template is="sayHi" data="{{...sayHi}}"></template>
-
 <view class="container">
-
-  <text bindtap="showModal" style="margin-bottom:50rpx;">显示弹窗</text>
-
-  <view  bindtap="bindViewTap" class="userinfo">
-    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-  </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view>
-  <view>
-  <modal title="modal对话框" hidden="{{modalHidden}}" confirm-text="确定" cancel-text="取消"
-  bindconfirm="onModalConfirm" bindcancel="onModalCancel">您好，我是modal对话框</modal>
-</view>
+    <view class="text-center">
+        <button bindtap="events.gotoSchedule" class="weui-btn mini-btn" type="primary" size="mini">创建日程</button>
+    </view>
 </view>

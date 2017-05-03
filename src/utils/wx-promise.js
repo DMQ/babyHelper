@@ -1,6 +1,5 @@
 const originalWx = wx;
-
-const isFunction = fn => typeof fn === 'function'
+const isFunction = fn => typeof fn === 'function';
 
 // promise添加always方法
 Promise.prototype.always = function (callback) {
@@ -15,27 +14,27 @@ Promise.prototype.always = function (callback) {
  * @param {string} method 需要支持promise的wx对象方法名
  * @param {boolean} optionsIsCallback 方法接受的参数是否是回调函数，一般是on开头的方法
  */
-export const makePromise = (method, optionsIsCallback) => {
+const makePromise = (method, optionsIsCallback) => {
     if (!isFunction(originalWx[method])) {
         return console.warn(`wx do not support method ${method}`)
     }
 
-    return function(options = {}) {
-        let _s = options.success, _f = options.fail;
+    return function(optionsOrCb = {}) {
+        let s = optionsOrCb.success, f = optionsOrCb.fail;
         return new Promise((rs, rj) => {
             originalWx[method](
                 optionsIsCallback 
                 ? function(res) {
-                    isFunction(options) && options(res);
+                    isFunction(optionsOrCb) && optionsOrCb(res);
                     rs(res);
                 }
-                : Object.assign(options, {
+                : Object.assign(optionsOrCb, {
                     success(res) {
-                        _s && _s(res);
+                        s && s(res);
                         rs(res);
                     },
                     fail(res) {
-                        _f && _f(res);
+                        f && f(res);
                         rj(res);
                     }
                 })
@@ -67,4 +66,9 @@ const getOriginalWx = () => {
     return originalWx;
 }
 
-export {makeWxSupportPromise, getOriginalWx}
+export {
+    makePromise, 
+    makeWxSupportPromise, 
+    getOriginalWx, 
+    resetWx
+}

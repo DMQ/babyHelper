@@ -5,10 +5,12 @@ Page({
     logs: []
   },
   onLoad: function () {
-    this.setData({
-      logs: (wx.getStorageSync('logs') || []).map(function (log) {
-        return util.formatTime(new Date(log))
-      })
-    })
+    // this.setData({
+    //   logs: (wx.getStorageSync('logs') || []).map(function (log) {
+    //     return util.formatTime(new Date(log))
+    //   })
+    // })
+
+    getApp().event.emit('mottoChange');
   }
 })

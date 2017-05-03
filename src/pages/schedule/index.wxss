@@ -1,0 +1,64 @@
+/**index.wxss**/
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width:100%;
+  padding:20rpx 10rpx;
+  box-sizing: border-box;
+  background: #fff;
+  min-height: 248rpx;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 10rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.form-wrap {
+  margin-top: 20rpx;
+  background: #fff;
+}
+
+.form-hd {
+  color: #bbb;
+  padding:1em 3em 1em;
+  text-align: center;
+}
+
+.form-hd text {
+  display:inline-block;
+  padding:0 40rpx 30rpx;
+  border-bottom:1rpx solid #ddd;
+}
+
+.weui-cell__bd picker {
+  display: inline-block;
+}
+
+.address-bd {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.picker-line {
+  border-left: 2rpx solid #ccc;
+  margin:0 30rpx;
+  display: inline-block;
+  height: 15px;
+}
+
+.submit-btn-wrap {
+  margin-top:40rpx;
+  padding:0 40rpx;
+}
+
+.submit-btn[type="primary"] {
+  background-color:#bc83f3;
+}
